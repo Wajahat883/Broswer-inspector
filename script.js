@@ -183,7 +183,7 @@ function displayMemory(){
       const response = await fetch("https://api-inference.huggingface.co/models/facebook/blenderbot-3B", {
         method: "POST",
         headers: {
-          "Authorization": "xxxxxxxxxxxxxxxxx",  
+          "Authorization": "Bearer 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",  
           "Content-Type": "application/json"
         },
         body: JSON.stringify({ inputs: prompt })
