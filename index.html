@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Browser Memory Inspector</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1 class="header">Browser Memory Inspector</h1>
+
+  <div class="tabs">
+    <button onclick="showContent('cookies')">Cookies</button>
+    <button onclick="showContent('localstorage')">LocalStorage</button>
+    <button onclick="showContent('sessionstorage')">SessionStorage</button>
+    <button onclick="showContent('chat')">AI-Chat</button>
+  </div>
+
+  <div class="theme-toggle">
+    <button onclick="toggleTheme()">Toggle Theme</button>
+  </div>
+
+  <div id="content" class="content">
+    <h3>Choose a tab to see stored data.</h3>
+  </div>
+
+  <!-- Cookie Controls -->
+  <div class="main-cookies">
+    <h3>Cookie Controls</h3>
+    <input type="text" id="cookieName" placeholder="Cookie Name" />
+    <input type="text" id="cookieValue" placeholder="Cookie Value" />
+    <button onclick="setCookie()">Set Cookie</button>
+  </div>
+
+  <!-- Storage Controls -->
+  <div class="main-storage">
+    <h3>Storage Controls</h3>
+    <input type="text" id="storageKey" placeholder="Key" />
+    <input type="text" id="storageValue" placeholder="Value" />
+    <select id="storageType">
+      <option value="local">LocalStorage</option>
+      <option value="session">SessionStorage</option>
+    </select>
+    <button onclick="setStorage()">Set Storage</button>
+  </div>
+
+  <div id="storageDisplay"></div>
+
+  <!-- Temporary Form -->
+  <div class="form-section">
+    <h3>Temporary Form (Saved in SessionStorage)</h3>
+    <form id="tempForm">
+      <input type="text" id="formInput" placeholder="Type something..." />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- JavaScript Object Inspector -->
+  <textarea id="jsobject" rows="5" cols="50" placeholder="Enter JavaScript object here"></textarea><br>
+  <button id="inspectBtn">Inspect Object</button>
+  <div id="objectDisplay"></div>
+  <!--Broswer memory snap shot -->
+  <h3>Browser Memory Snapshot</h3>
+  <button onclick="displayMemory()">Refresh Snapshot</button>
+  <div id="memoryDisplay"></div>
+  <!--ai chat box-->
+  <div class="chat-container">
+    <h3>Ai Dev Assistant</h3>
+    <div id="chatDisplay" class="chat-box"></div>
+    <textarea  id="userPrompt" placeholder="Ask anything about js , storage, etc."></textarea></br>
+    <button onclick="askAi()">Send</button>
+  </div>
+
+  <script src="script.js"></script>
+  <!-- <script src="./storage.js"></script> -->
+</body>
+</html>
